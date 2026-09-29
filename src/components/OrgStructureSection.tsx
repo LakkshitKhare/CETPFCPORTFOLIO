@@ -190,7 +190,7 @@ export function OrgStructureSection() {
                     <div>
                       <h4 className="text-sm font-bold text-slate-900">Milind Kumar Verma</h4>
                       <span className="text-xs text-blue-800 font-semibold block">
-                        Assistant General Manager
+                        Assistant General Manager - Desk Officer
                       </span>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export function OrgStructureSection() {
                     <div>
                       <h4 className="text-sm font-bold text-slate-900">M. R. Mishra</h4>
                       <span className="text-xs text-blue-800 font-semibold block">
-                        Senior Manager
+                        Senior Manager - Desk Officer
                       </span>
                     </div>
                   </div>
@@ -234,7 +234,7 @@ export function OrgStructureSection() {
                     <div>
                       <h4 className="text-sm font-bold text-slate-900">Ms. Nikki Gupta</h4>
                       <span className="text-xs text-blue-800 font-semibold block">
-                        Senior Manager
+                        Senior Manager - Desk Officer
                       </span>
                     </div>
                   </div>
