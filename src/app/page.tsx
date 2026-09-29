@@ -122,7 +122,10 @@ export default function HomePage() {
           }}
         />
 
-        {/* 3. Live Project Status Overview / Dashboard with Pie Chart */}
+        {/* 3. About Department */}
+        <AboutSection />
+
+        {/* 4. Live Project Status Overview / Dashboard with Pie Chart */}
         <ProjectStatusDashboard
           stats={stats}
           lastUpdated={lastUpdated}
@@ -132,9 +135,6 @@ export default function HomePage() {
           onRefresh={() => fetchData(true)}
           onSelectStage={handleStageSelectFromOtherSections}
         />
-
-        {/* 4. About Department */}
-        <AboutSection />
 
         {/* 5. Project Formulation & Coordination Lifecycle */}
         <LifecycleSection
