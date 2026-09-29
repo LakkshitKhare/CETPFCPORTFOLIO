@@ -219,7 +219,7 @@ export function ProjectStatusDashboard({
             <div className="absolute top-0 right-0 left-0 h-1.5 bg-blue-600" />
             <div className="flex items-center justify-between">
               <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 uppercase tracking-wide">
-                Tier 3 Approval
+                Tier 3 Approval &amp; Tendering
               </span>
               <span className="text-[11px] font-mono font-semibold text-slate-500">
                 {pct(stage1)}% of active
@@ -230,7 +230,7 @@ export function ProjectStatusDashboard({
               STAGE 1
             </h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              In-principle approval, TS preparation &amp; NIT
+              In-principle approval &amp; under tendering
             </p>
 
             {/* Total Cost in Stage 1 */}
@@ -270,7 +270,7 @@ export function ProjectStatusDashboard({
               UNDER CONSIDERATION
             </h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              Pre-feasibility review &amp; concept notes
+              Feasibility / Technical specification submitted
             </p>
 
             {/* Total Cost in Under Consideration */}
@@ -310,7 +310,7 @@ export function ProjectStatusDashboard({
               UNDER FORMULATION
             </h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              Feasibility Reports (FR) &amp; DPR drafting
+              Scope finalisation, FR preparation &amp; review
             </p>
 
             {/* Total Cost in Under Formulation */}

@@ -357,7 +357,7 @@ export function normalizeProjectData(csvRows: string[][]): {
   const totalActiveProjects = stage2Count + stage1Count + underConsiderationCount + underFormulationCount;
 
   const stats: ProjectStats = {
-    totalProjects: projects.length,
+    totalProjects: stage2Count + stage1Count + underConsiderationCount + underFormulationCount,
     stage2Count,
     stage1Count,
     underConsiderationCount,

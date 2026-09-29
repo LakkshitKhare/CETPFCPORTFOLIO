@@ -52,7 +52,7 @@ export function ProjectCostPieChart({ stats, onSelectStage }: ProjectCostPieChar
       id: "UNDER FORMULATION",
       label: "Under Formulation",
       shortLabel: "Under Formulation",
-      tierLabel: "Tier 2 DPR / FR",
+      tierLabel: "Tier 2 DPR / FR Submitted",
       costCr: stats.underFormulationCostCr || 0,
       count: stats.underFormulationCount || 0,
       color: "#9333EA", // purple-600
@@ -64,7 +64,7 @@ export function ProjectCostPieChart({ stats, onSelectStage }: ProjectCostPieChar
       id: "STAGE 1",
       label: "Stage 1",
       shortLabel: "Stage 1",
-      tierLabel: "Tier 3 In-Principle Approval",
+      tierLabel: "Tier 3 Approval & Tendering",
       costCr: stats.stage1CostCr || 0,
       count: stats.stage1Count || 0,
       color: "#2563EB", // blue-600

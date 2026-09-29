@@ -514,7 +514,7 @@ export function ProjectPortfolioSection({
             <div className="flex items-center gap-2 text-slate-600">
               <span>
                 Showing <strong className="text-slate-900 font-mono">{filteredProjects.length}</strong> of{" "}
-                <strong className="text-slate-900 font-mono">{projects.length}</strong> total projects
+                <strong className="text-slate-900 font-mono">{stats.totalProjects}</strong> total projects
               </span>
               {(searchQuery || selectedPlant !== "ALL" || selectedSection !== "ALL" || activeStageTab !== "ALL") && (
                 <span className="text-[11px] text-blue-800 font-medium bg-blue-50 px-2 py-0.5 rounded border border-blue-200">

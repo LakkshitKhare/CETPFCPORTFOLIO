@@ -47,7 +47,7 @@ export function HeroSection({
               <span>Centre of Enineering and Technology</span>
             </div>
 
-            <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-[5.2rem] font-black tracking-[-0.05em] text-white leading-[0.9] max-w-5xl">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-[-0.05em] text-white leading-[0.95] max-w-5xl">
               Steel Authority of India Limited
             </h1>
 
@@ -95,7 +95,7 @@ export function HeroSection({
                   Active Plants Served
                 </span>
                 <span className="font-semibold text-slate-100 text-xs sm:text-sm">
-                  BSP, RSP, BSL, DSP, ISP, CMLO
+                  SAIL PLANTS
                 </span>
               </div>
               <div>

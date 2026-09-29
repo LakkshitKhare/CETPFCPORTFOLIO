@@ -29,82 +29,82 @@ export function LifecycleSection({
 }: LifecycleSectionProps) {
   const steps = [
     {
-      id: "UNDER CONSIDERATION" as const,
-      number: "01",
-      title: "Under Consideration",
-      subTitle: "Scoping & Pre-Feasibility Assessment",
-      badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
-      icon: FileQuestion,
-      accentColor: "border-amber-500",
-      bgColor: "bg-amber-50/50",
-      count: stageCounts.underConsideration,
-      description:
-        "Initial project assignment requisition received from plant management or corporate planning. The department reviews technical scope, undertakes site visits, and prepares preliminary Technical Notes (TN) and Approach Notes (AN).",
-      keyDeliverables: [
-        "Assignment Registration & TFL Assignment",
-        "Approach Note (AN) & Scoping Document",
-        "Technical Note (TN) & Concept Feasibility",
-        "Preliminary Mining / Plant Scheme Review",
-      ],
-      decisionGate: "Acceptance & In-Principle Mandate for Formulation",
-    },
-    {
       id: "UNDER FORMULATION" as const,
-      number: "02",
+      number: "01",
       title: "Under Formulation",
-      subTitle: "Feasibility Report & Basic Engineering",
+      subTitle: "Tier 2 • DPR/FR Submitted",
       badgeColor: "bg-purple-100 text-purple-900 border-purple-300",
       icon: FileCode2,
       accentColor: "border-purple-600",
       bgColor: "bg-purple-50/50",
       count: stageCounts.underFormulation,
       description:
-        "Multi-disciplinary engineering teams led by Task Force Leaders formulate comprehensive Feasibility Reports (FR), Detailed Project Reports (DPR), technological layout options, Capex estimates, and project schedules.",
+        "The formulation team prepares the project basis, development options, technical layouts, preliminary cost estimates, and the formal feasibility documentation required for approval and sanctioning.",
       keyDeliverables: [
-        "Feasibility Report (FR) & DPR Submission",
-        "Basic Technological Design & Layouts",
-        "Indicative & Latest Capital Cost Estimation",
-        "Implementation Schedule & Financial IRR Modeling",
+        "Scope Finalisation",
+        "FR Preparation and Review",
+        "DPR/FR Submission for Management Review",
+        "Indicative Cost Estimate & Project Basis",
       ],
-      decisionGate: "Submission of FR to Plant / SAIL Corporate Office",
+      decisionGate: "Approval-ready project package for Board / sanctioning authority",
+    },
+    {
+      id: "UNDER CONSIDERATION" as const,
+      number: "02",
+      title: "Under Consideration",
+      subTitle: "Tier 1 • Scoping",
+      badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
+      icon: FileQuestion,
+      accentColor: "border-amber-500",
+      bgColor: "bg-amber-50/50",
+      count: stageCounts.underConsideration,
+      description:
+        "The project concept is reviewed for strategic fit, site relevance, and preliminary technical viability. CET validates the scope, assesses whether a technical mandate should be initiated, and aligns the assignment with plant requirements.",
+      keyDeliverables: [
+        "Assignment Registration & TFL Assignment",
+        "Scope Framing & Technical Requirement Mapping",
+        "Feasibility / Technical Specification Submitted",
+        "Initial Review for Mandate-to-Formulation",
+      ],
+      decisionGate: "Acceptance for formulation and technical mandate",
     },
     {
       id: "STAGE 1" as const,
       number: "03",
       title: "Stage 1",
-      subTitle: "Board In-Principle Sanction & Tendering",
+      subTitle: "Tier 3 • Approval & Tendering",
       badgeColor: "bg-blue-100 text-blue-900 border-blue-300",
       icon: FileCheck2,
       accentColor: "border-blue-600",
       bgColor: "bg-blue-50/50",
       count: stageCounts.stage1,
       description:
-        "Following Stage-1 (in-principle) approval from the SAIL Board or Plant Authority, the department drafts detailed Tender Specifications (TS), definitive Cost Estimates (CE), and issues Notice Inviting Tender (NIT).",
+        "Once the in-principle approval is received, CET finalises the commercial and tendering package, prepares the procurement route, and coordinates technical and financial evaluation for award.",
       keyDeliverables: [
-        "Stage-1 Formal Sanction & Date Recording",
-        "Tender Specification (TS) & Bill of Quantities",
-        "Definitive Cost Estimate (CE) & Packaging Scheme",
-        "NIT Issuance & Techno-Commercial Inquiry",
+        "Stage-1 Sanction & Date Recording",
+        "Tendering Package Finalisation",
+        "Technical & Commercial Bid Evaluation",
+        "Under Tendering / Bid Process Management",
       ],
-      decisionGate: "Tender Open Date (TOD) & Technical Evaluation (TER)",
+      decisionGate: "Tender completion, technical evaluation and award recommendation",
     },
     {
       id: "STAGE 2" as const,
       number: "04",
       title: "Stage 2",
-      subTitle: "Final Board Sanction & Execution Monitoring",
+      subTitle: "Tier 4 • Sanction & Execution",
       badgeColor: "bg-emerald-100 text-emerald-900 border-emerald-300",
       icon: Rocket,
       accentColor: "border-emerald-600",
       bgColor: "bg-emerald-50/50",
       count: stageCounts.stage2,
       description:
-        "Final Stage-2 financial sanction is accorded by the SAIL Board. Contracts are awarded, contractors mobilized, and CET provides Designer's Supervision and milestone monitoring up to commissioning.",
+        "Final sanctions are granted, contracts are awarded, and the project enters execution. CET continues as the design and coordination interface through implementation, monitoring and commissioning.",
       keyDeliverables: [
         "Stage-2 Board Sanction & Expenditure Approval",
-        "Tender Evaluation Report (TER) & Contract Award",
-        "Implementation Schedule & Milestone Tracking",
-        "Designer's Supervision & Commissioning Protocol",
+        "Contract Award & Mobilisation",
+        "Execution Monitoring & Design Coordination",
+        "Commissioning, Handover & Closure",
       ],
       decisionGate: "Successful Testing, Commissioning & Handover",
     },
@@ -223,7 +223,7 @@ export function LifecycleSection({
             <div className="flex items-center gap-2">
               <span className="font-bold text-slate-900">Official Workflow Sequence:</span>
               <span className="hidden sm:inline font-mono">
-                Under Consideration → Under Formulation → Stage 1 (In-Principle) → Stage 2 (Sanction &amp; Execution)
+                Under Formulation → Under Consideration → Stage 1 → Stage 2 → Commissioning &amp; Handover
               </span>
             </div>
             <a
