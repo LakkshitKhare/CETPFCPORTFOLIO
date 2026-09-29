@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Project Formulation & Coordination Department | SAIL • CET Ranchi",
   description:
     "Official institutional portal of Project Formulation & Coordination (PF&C) Department, Centre for Engineering & Technology (CET), Steel Authority of India Limited (SAIL). Live project portfolio monitoring, capex appraisal lifecycle, and departmental hierarchy.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   keywords: [
     "SAIL",
     "CET Ranchi",
