@@ -288,10 +288,16 @@ export function normalizeProjectData(csvRows: string[][]): {
         break;
     }
 
-    if (plant) {
+    const isLiveStage =
+      normalizedStage === "STAGE 2" ||
+      normalizedStage === "STAGE 1" ||
+      normalizedStage === "UNDER CONSIDERATION" ||
+      normalizedStage === "UNDER FORMULATION";
+
+    if (isLiveStage && plant) {
       plantCounts[plant] = (plantCounts[plant] || 0) + 1;
     }
-    if (leadSection) {
+    if (isLiveStage && leadSection) {
       sectionCounts[leadSection] = (sectionCounts[leadSection] || 0) + 1;
     }
 

@@ -17,4 +17,7 @@ test('totalProjects should include only the four official stages and ignore unde
   assert.equal(stats.totalActiveProjects, 3);
   assert.equal(stats.otherCount, 1);
   assert.equal(projects.length, 4);
+  assert.equal(stats.plantCounts['PLANT A'], 2);
+  assert.equal(stats.plantCounts['PLANT B'], 1);
+  assert.equal(Object.keys(stats.plantCounts).length, 2);
 });

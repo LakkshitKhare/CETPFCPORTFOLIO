@@ -272,14 +272,6 @@ export function ProjectPortfolioSection({
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
-            <button
-              onClick={handleExportCSV}
-              disabled={filteredProjects.length === 0}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 text-xs font-bold shadow-xs cursor-pointer transition-colors disabled:opacity-50"
-            >
-              <Download className="w-3.5 h-3.5 text-slate-500" />
-              <span>Export CSV</span>
-            </button>
 
             <button
               onClick={onRefresh}
