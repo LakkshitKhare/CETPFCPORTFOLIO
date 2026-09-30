@@ -665,7 +665,7 @@ export function ProjectPortfolioSection({
 
                         {/* Cost */}
                         <td className="px-3 py-3 text-right font-mono font-bold text-slate-900 whitespace-nowrap">
-                          {project.cost ? `₹ ${project.cost}` : "—"}
+                          {project.costNum ? `₹ ${project.costNum}` : "—"}
                         </td>
 
                         {/* Action View */}

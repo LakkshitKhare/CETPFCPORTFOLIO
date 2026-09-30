@@ -137,7 +137,7 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
                 <span className="text-[10px] text-slate-500 uppercase font-medium block">Cost (₹ in Cr)</span>
                 <span className="text-sm font-bold text-slate-900 font-mono">
-                  {project.cost ? `₹ ${project.cost} Cr` : "—"}
+                  {project.costNum ? `₹ ${project.costNum} Cr` : "—"}
                 </span>
               </div>
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">

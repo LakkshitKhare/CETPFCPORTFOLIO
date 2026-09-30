@@ -82,16 +82,6 @@ export function SailHeader({
                 <span>{isRefreshing ? "Syncing..." : "Sync Sheet"}</span>
               </button>
             )}
-
-            <a
-              href="https://docs.google.com/spreadsheets/d/1lFAJpkXHc1knvtkXStG12SRLJfEUW-ax2hPNaRnZLgo/edit?gid=1788317319#gid=1788317319"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-1 text-[11px] text-sky-300 hover:text-sky-200 underline decoration-sky-500/50 underline-offset-2"
-            >
-              <span>Source Sheet</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
           </div>
         </div>
       </div>
