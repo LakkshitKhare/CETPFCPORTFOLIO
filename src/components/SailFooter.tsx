@@ -109,7 +109,7 @@ export function SailFooter({ lastUpdated, totalProjects = 0 }: SailFooterProps) 
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
                 <span>
-                  Room C-334, 4th Floor, Ispat Bhawan, Shyamali Colony, Doranda, Ranchi – 834002
+                  4th Floor, Ispat Bhawan, Shyamali Colony, Doranda, Ranchi – 834002
                   (Jharkhand)
                 </span>
               </div>

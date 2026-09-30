@@ -40,7 +40,7 @@ export function ContactSection() {
     email: "pfc.cet@sail.in",
     alternateEmail: "edcetsail@sail.in",
     address:
-      "Room C-334, 4th Floor, RDCIS Lab Building, Ispat Bhawan, Shyamali Colony, Doranda, Ranchi – 834002, Jharkhand, India",
+      "4th Floor, RDCIS Lab Building, Ispat Bhawan, Shyamali Colony, Doranda, Ranchi – 834002, Jharkhand, India",
     workingHours: "10:00 – 18:00 Hrs. (Monday to Friday, 1st/3rd Saturdays)",
   };
 
