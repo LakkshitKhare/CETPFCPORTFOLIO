@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ProjectStats, ProjectStage } from "@/types/project";
+import { ProjectStats, StageTabFilter } from "@/types/project";
 import { ProjectCostPieChart } from "./ProjectCostPieChart";
 import {
   RefreshCw,
@@ -21,7 +21,7 @@ interface ProjectStatusDashboardProps {
   isLoading?: boolean;
   isRefreshing?: boolean;
   onRefresh: () => void;
-  onSelectStage?: (stage: ProjectStage | "ALL") => void;
+  onSelectStage?: (stage: StageTabFilter) => void;
 }
 
 export function ProjectStatusDashboard({
@@ -58,7 +58,7 @@ export function ProjectStatusDashboard({
       })
     : "Synchronizing...";
 
-  const handleStageClick = (stage: ProjectStage | "ALL") => {
+  const handleStageClick = (stage: StageTabFilter) => {
     if (onSelectStage) {
       onSelectStage(stage);
     }
@@ -337,7 +337,7 @@ export function ProjectStatusDashboard({
         {/* PIE CHART SECTION: Interactive Stage Total Cost & Distribution Breakdown */}
         <ProjectCostPieChart
           stats={stats}
-          onSelectStage={(stage) => handleStageClick(stage)}
+          onSelectStage={(stage) => handleStageClick(stage as StageTabFilter)}
         />
 
         {/* Plant Wise Distribution Breakdown Strip */}

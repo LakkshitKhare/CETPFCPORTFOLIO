@@ -71,6 +71,7 @@ export function AboutSection() {
                   src="/images/Sail.png"
                   alt="Engineering Blueprints and Metallurgical CAD"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/90 via-[#0B2545]/30 to-transparent" />

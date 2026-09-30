@@ -77,4 +77,4 @@ export interface ApiResponse {
   isStale?: boolean;
 }
 
-export type StageTabFilter = "ALL" | "STAGE 2" | "STAGE 1" | "UNDER CONSIDERATION" | "UNDER FORMULATION" | "OTHER";
+export type StageTabFilter = "ALL" | "STAGE 2" | "STAGE 1" | "UNDER CONSIDERATION" | "UNDER FORMULATION";

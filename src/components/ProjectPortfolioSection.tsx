@@ -76,29 +76,34 @@ export function ProjectPortfolioSection({
     }
   };
 
+  const liveProjects = useMemo(
+    () => projects.filter((project) => project.normalizedStage !== "OTHER"),
+    [projects]
+  );
+
   // Distinct plants and sections for dropdowns
   const distinctPlants = useMemo(() => {
     const set = new Set<string>();
-    projects.forEach((p) => {
+    liveProjects.forEach((p) => {
       if (p.plant && p.plant !== "—" && p.plant !== "Unspecified") set.add(p.plant);
     });
     return Array.from(set).sort();
-  }, [projects]);
+  }, [liveProjects]);
 
   const distinctSections = useMemo(() => {
     const set = new Set<string>();
-    projects.forEach((p) => {
+    liveProjects.forEach((p) => {
       if (p.leadSection && p.leadSection !== "—") set.add(p.leadSection);
     });
     return Array.from(set).sort();
-  }, [projects]);
+  }, [liveProjects]);
 
   // Filtering & Sorting
   const filteredProjects = useMemo(() => {
     return projects
       .filter((project) => {
-        // Only the four official formulation stages are counted in the live portfolio totals.
-        if (activeStageTab === "ALL" && project.normalizedStage === "OTHER") return false;
+        // Only the four official formulation stages are included in the live portfolio.
+        if (project.normalizedStage === "OTHER") return false;
 
         // 1. Stage Tab Filter
         if (activeStageTab === "STAGE 2" && project.normalizedStage !== "STAGE 2") return false;
@@ -107,7 +112,6 @@ export function ProjectPortfolioSection({
           return false;
         if (activeStageTab === "UNDER FORMULATION" && project.normalizedStage !== "UNDER FORMULATION")
           return false;
-        if (activeStageTab === "OTHER" && project.normalizedStage !== "OTHER") return false;
 
         // 2. Plant Filter
         if (selectedPlant !== "ALL" && project.plant !== selectedPlant) return false;
@@ -465,10 +469,10 @@ export function ProjectPortfolioSection({
                 }}
                 className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
               >
-                <option value="ALL">All Plants &amp; Mines ({projects.length})</option>
+                <option value="ALL">All Plants &amp; Mines ({liveProjects.length})</option>
                 {distinctPlants.map((plant) => (
                   <option key={plant} value={plant}>
-                    {plant} ({projects.filter((p) => p.plant === plant).length} projects)
+                    {plant} ({liveProjects.filter((p) => p.plant === plant).length} projects)
                   </option>
                 ))}
               </select>
