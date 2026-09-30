@@ -97,6 +97,9 @@ export function ProjectPortfolioSection({
   const filteredProjects = useMemo(() => {
     return projects
       .filter((project) => {
+        // Only the four official formulation stages are counted in the live portfolio totals.
+        if (activeStageTab === "ALL" && project.normalizedStage === "OTHER") return false;
+
         // 1. Stage Tab Filter
         if (activeStageTab === "STAGE 2" && project.normalizedStage !== "STAGE 2") return false;
         if (activeStageTab === "STAGE 1" && project.normalizedStage !== "STAGE 1") return false;

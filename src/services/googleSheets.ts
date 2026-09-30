@@ -355,9 +355,10 @@ export function normalizeProjectData(csvRows: string[][]): {
   const totalActiveCostCr =
     Math.round((stage2CostSum + stage1CostSum + underConsiderationCostSum + underFormulationCostSum) * 100) / 100;
   const totalActiveProjects = stage2Count + stage1Count + underConsiderationCount + underFormulationCount;
+  const totalProjects = totalActiveProjects;
 
   const stats: ProjectStats = {
-    totalProjects: stage2Count + stage1Count + underConsiderationCount + underFormulationCount,
+    totalProjects,
     stage2Count,
     stage1Count,
     underConsiderationCount,

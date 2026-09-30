@@ -33,14 +33,16 @@ export function ProjectStatusDashboard({
   onRefresh,
   onSelectStage,
 }: ProjectStatusDashboardProps) {
-  const total = stats.totalProjects || 0;
   const stage2 = stats.stage2Count || 0;
   const stage1 = stats.stage1Count || 0;
   const underConsideration = stats.underConsiderationCount || 0;
   const underFormulation = stats.underFormulationCount || 0;
 
+  // Always derive the live total from the four active stages, never from a fixed stored value.
+  const total = stage2 + stage1 + underConsideration + underFormulation;
+
   // Active 4 stages total
-  const activeTotal = stage2 + stage1 + underConsideration + underFormulation;
+  const activeTotal = total;
 
   // Percentage calculations
   const pct = (val: number) => (activeTotal > 0 ? ((val / activeTotal) * 100).toFixed(1) : "0");

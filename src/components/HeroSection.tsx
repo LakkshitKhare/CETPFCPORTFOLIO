@@ -125,7 +125,7 @@ export function HeroSection({
               <div className="space-y-4">
                 <div className="bg-slate-950/60 rounded-lg p-3.5 border border-slate-800">
                   <span className="text-xs text-slate-400 font-medium uppercase tracking-wider">
-                    Total Active Projects In Portfolio
+                    Total Records In Portfolio
                   </span>
                   <div className="flex items-baseline gap-2 mt-1">
                     <span className="text-3xl font-black text-white font-mono">

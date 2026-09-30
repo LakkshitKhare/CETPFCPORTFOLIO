@@ -42,6 +42,12 @@ export default function HomePage() {
   const [error, setError] = useState<string | null>(null);
   const [selectedStageFilter, setSelectedStageFilter] = useState<StageTabFilter>("ALL");
 
+  const liveTotalProjects =
+    (stats.stage2Count || 0) +
+    (stats.stage1Count || 0) +
+    (stats.underConsiderationCount || 0) +
+    (stats.underFormulationCount || 0);
+
   const fetchData = useCallback(async (forceRefresh = false) => {
     if (forceRefresh) {
       setIsRefreshing(true);
@@ -106,7 +112,7 @@ export default function HomePage() {
       {/* 1. Header & Navigation */}
       <SailHeader
         lastUpdated={lastUpdated}
-        totalProjects={stats.totalProjects}
+        totalProjects={liveTotalProjects}
         onRefresh={() => fetchData(true)}
         isRefreshing={isRefreshing}
       />
@@ -114,7 +120,7 @@ export default function HomePage() {
       <main className="flex-1">
         {/* 2. Hero Section */}
         <HeroSection
-          totalProjects={stats.totalProjects}
+          totalProjects={liveTotalProjects}
           stage2Count={stats.stage2Count}
           onExplorePortfolio={() => {
             const el = document.getElementById("portfolio");
@@ -169,7 +175,7 @@ export default function HomePage() {
       </main>
 
       {/* 9. Institutional Footer */}
-      <SailFooter lastUpdated={lastUpdated} totalProjects={stats.totalProjects} />
+      <SailFooter lastUpdated={lastUpdated} totalProjects={liveTotalProjects} />
     </div>
   );
 }
