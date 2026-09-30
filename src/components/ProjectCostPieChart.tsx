@@ -37,18 +37,6 @@ export function ProjectCostPieChart({ stats, onSelectStage }: ProjectCostPieChar
   // 4 Primary Stages strictly excluding other/closed
   const slices: StageSlice[] = [
     {
-      id: "UNDER CONSIDERATION",
-      label: "Under Consideration",
-      shortLabel: "Under Consideration",
-      tierLabel: "Tier 1 Scoping",
-      costCr: stats.underConsiderationCostCr || 0,
-      count: stats.underConsiderationCount || 0,
-      color: "#F59E0B", // amber-500
-      hoverColor: "#D97706", // amber-600
-      textColor: "text-amber-800",
-      badgeBg: "bg-amber-100 border-amber-300 text-amber-900",
-    },
-    {
       id: "UNDER FORMULATION",
       label: "Under Formulation",
       shortLabel: "Under Formulation",
@@ -59,6 +47,18 @@ export function ProjectCostPieChart({ stats, onSelectStage }: ProjectCostPieChar
       hoverColor: "#7E22CE", // purple-700
       textColor: "text-purple-800",
       badgeBg: "bg-purple-100 border-purple-300 text-purple-900",
+    },
+    {
+      id: "UNDER CONSIDERATION",
+      label: "Under Consideration",
+      shortLabel: "Under Consideration",
+      tierLabel: "Tier 1 Scoping",
+      costCr: stats.underConsiderationCostCr || 0,
+      count: stats.underConsiderationCount || 0,
+      color: "#F59E0B", // amber-500
+      hoverColor: "#D97706", // amber-600
+      textColor: "text-amber-800",
+      badgeBg: "bg-amber-100 border-amber-300 text-amber-900",
     },
     {
       id: "STAGE 1",

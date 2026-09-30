@@ -173,127 +173,7 @@ export function ProjectStatusDashboard({
 
         {/* 4 Primary Stage Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* 1. STAGE 2 */}
-          <div
-            onClick={() => handleStageClick("STAGE 2")}
-            className="group bg-white rounded-xl p-5 border-2 border-emerald-500/80 shadow-sm hover:shadow-md hover:border-emerald-600 transition-all cursor-pointer relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 left-0 h-1.5 bg-emerald-600" />
-            <div className="flex items-center justify-between">
-              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 uppercase tracking-wide">
-                Tier 4 Sanction
-              </span>
-              <span className="text-[11px] font-mono font-semibold text-slate-500">
-                {pct(stage2)}% of active
-              </span>
-            </div>
-
-            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
-              STAGE 2
-            </h4>
-            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              Final Board sanction &amp; active execution
-            </p>
-
-            {/* Total Cost in Stage 2 */}
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500 font-medium">Total Outlay:</span>
-              <span className="font-mono font-bold text-emerald-800">
-                {formatCost(stats.stage2CostCr)}
-              </span>
-            </div>
-
-            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
-              <div className="text-3xl sm:text-4xl font-black text-emerald-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
-                {isLoading ? "..." : stage2}
-              </div>
-              <span className="text-xs font-bold text-emerald-800 flex items-center gap-0.5 group-hover:underline">
-                Filter Stage 2 <ArrowUpRight className="w-3.5 h-3.5" />
-              </span>
-            </div>
-          </div>
-
-          {/* 2. STAGE 1 */}
-          <div
-            onClick={() => handleStageClick("STAGE 1")}
-            className="group bg-white rounded-xl p-5 border-2 border-blue-500/80 shadow-sm hover:shadow-md hover:border-blue-600 transition-all cursor-pointer relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 left-0 h-1.5 bg-blue-600" />
-            <div className="flex items-center justify-between">
-              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 uppercase tracking-wide">
-                Tier 3 Approval &amp; Tendering
-              </span>
-              <span className="text-[11px] font-mono font-semibold text-slate-500">
-                {pct(stage1)}% of active
-              </span>
-            </div>
-
-            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
-              STAGE 1
-            </h4>
-            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              In-principle approval &amp; under tendering
-            </p>
-
-            {/* Total Cost in Stage 1 */}
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500 font-medium">Total Outlay:</span>
-              <span className="font-mono font-bold text-blue-800">
-                {formatCost(stats.stage1CostCr)}
-              </span>
-            </div>
-
-            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
-              <div className="text-3xl sm:text-4xl font-black text-blue-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
-                {isLoading ? "..." : stage1}
-              </div>
-              <span className="text-xs font-bold text-blue-800 flex items-center gap-0.5 group-hover:underline">
-                Filter Stage 1 <ArrowUpRight className="w-3.5 h-3.5" />
-              </span>
-            </div>
-          </div>
-
-          {/* 3. UNDER CONSIDERATION */}
-          <div
-            onClick={() => handleStageClick("UNDER CONSIDERATION")}
-            className="group bg-white rounded-xl p-5 border-2 border-amber-500/80 shadow-sm hover:shadow-md hover:border-amber-600 transition-all cursor-pointer relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 left-0 h-1.5 bg-amber-500" />
-            <div className="flex items-center justify-between">
-              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-900 uppercase tracking-wide">
-                Tier 1 Scoping
-              </span>
-              <span className="text-[11px] font-mono font-semibold text-slate-500">
-                {pct(underConsideration)}% of active
-              </span>
-            </div>
-
-            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
-              UNDER CONSIDERATION
-            </h4>
-            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
-              Feasibility / Technical specification submitted
-            </p>
-
-            {/* Total Cost in Under Consideration */}
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500 font-medium">Total Outlay:</span>
-              <span className="font-mono font-bold text-amber-800">
-                {formatCost(stats.underConsiderationCostCr)}
-              </span>
-            </div>
-
-            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
-              <div className="text-3xl sm:text-4xl font-black text-amber-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
-                {isLoading ? "..." : underConsideration}
-              </div>
-              <span className="text-xs font-bold text-amber-800 flex items-center gap-0.5 group-hover:underline">
-                Filter Consideration <ArrowUpRight className="w-3.5 h-3.5" />
-              </span>
-            </div>
-          </div>
-
-          {/* 4. UNDER FORMULATION */}
+          {/* 1. UNDER FORMULATION */}
           <div
             onClick={() => handleStageClick("UNDER FORMULATION")}
             className="group bg-white rounded-xl p-5 border-2 border-purple-500/80 shadow-sm hover:shadow-md hover:border-purple-600 transition-all cursor-pointer relative overflow-hidden"
@@ -315,7 +195,6 @@ export function ProjectStatusDashboard({
               Scope finalisation, FR preparation &amp; review
             </p>
 
-            {/* Total Cost in Under Formulation */}
             <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
               <span className="text-slate-500 font-medium">Total Outlay:</span>
               <span className="font-mono font-bold text-purple-800">
@@ -329,6 +208,123 @@ export function ProjectStatusDashboard({
               </div>
               <span className="text-xs font-bold text-purple-800 flex items-center gap-0.5 group-hover:underline">
                 Filter Formulation <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </div>
+
+          {/* 2. UNDER CONSIDERATION */}
+          <div
+            onClick={() => handleStageClick("UNDER CONSIDERATION")}
+            className="group bg-white rounded-xl p-5 border-2 border-amber-500/80 shadow-sm hover:shadow-md hover:border-amber-600 transition-all cursor-pointer relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 left-0 h-1.5 bg-amber-500" />
+            <div className="flex items-center justify-between">
+              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-900 uppercase tracking-wide">
+                Tier 1 Scoping
+              </span>
+              <span className="text-[11px] font-mono font-semibold text-slate-500">
+                {pct(underConsideration)}% of active
+              </span>
+            </div>
+
+            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
+              UNDER CONSIDERATION
+            </h4>
+            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
+              Feasibility / Technical specification submitted
+            </p>
+
+            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span className="text-slate-500 font-medium">Total Outlay:</span>
+              <span className="font-mono font-bold text-amber-800">
+                {formatCost(stats.underConsiderationCostCr)}
+              </span>
+            </div>
+
+            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+              <div className="text-3xl sm:text-4xl font-black text-amber-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
+                {isLoading ? "..." : underConsideration}
+              </div>
+              <span className="text-xs font-bold text-amber-800 flex items-center gap-0.5 group-hover:underline">
+                Filter Consideration <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </div>
+
+          {/* 3. STAGE 1 */}
+          <div
+            onClick={() => handleStageClick("STAGE 1")}
+            className="group bg-white rounded-xl p-5 border-2 border-blue-500/80 shadow-sm hover:shadow-md hover:border-blue-600 transition-all cursor-pointer relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 left-0 h-1.5 bg-blue-600" />
+            <div className="flex items-center justify-between">
+              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 uppercase tracking-wide">
+                Tier 3 Approval &amp; Tendering
+              </span>
+              <span className="text-[11px] font-mono font-semibold text-slate-500">
+                {pct(stage1)}% of active
+              </span>
+            </div>
+
+            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
+              STAGE 1
+            </h4>
+            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
+              In-principle approval &amp; under tendering
+            </p>
+
+            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span className="text-slate-500 font-medium">Total Outlay:</span>
+              <span className="font-mono font-bold text-blue-800">
+                {formatCost(stats.stage1CostCr)}
+              </span>
+            </div>
+
+            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+              <div className="text-3xl sm:text-4xl font-black text-blue-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
+                {isLoading ? "..." : stage1}
+              </div>
+              <span className="text-xs font-bold text-blue-800 flex items-center gap-0.5 group-hover:underline">
+                Filter Stage 1 <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </div>
+
+          {/* 4. STAGE 2 */}
+          <div
+            onClick={() => handleStageClick("STAGE 2")}
+            className="group bg-white rounded-xl p-5 border-2 border-emerald-500/80 shadow-sm hover:shadow-md hover:border-emerald-600 transition-all cursor-pointer relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 left-0 h-1.5 bg-emerald-600" />
+            <div className="flex items-center justify-between">
+              <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 uppercase tracking-wide">
+                Tier 4 Sanction
+              </span>
+              <span className="text-[11px] font-mono font-semibold text-slate-500">
+                {pct(stage2)}% of active
+              </span>
+            </div>
+
+            <h4 className="text-base font-black text-slate-900 mt-3 tracking-tight">
+              STAGE 2
+            </h4>
+            <p className="text-xs text-slate-600 mt-0.5 leading-snug">
+              Final Board sanction &amp; active execution
+            </p>
+
+            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span className="text-slate-500 font-medium">Total Outlay:</span>
+              <span className="font-mono font-bold text-emerald-800">
+                {formatCost(stats.stage2CostCr)}
+              </span>
+            </div>
+
+            <div className="mt-2 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+              <div className="text-3xl sm:text-4xl font-black text-emerald-700 font-mono tracking-tight group-hover:scale-105 transition-transform">
+                {isLoading ? "..." : stage2}
+              </div>
+              <span className="text-xs font-bold text-emerald-800 flex items-center gap-0.5 group-hover:underline">
+                Filter Stage 2 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
             </div>
           </div>

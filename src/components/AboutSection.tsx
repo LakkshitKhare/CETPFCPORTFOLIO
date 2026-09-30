@@ -171,9 +171,9 @@ export function AboutSection() {
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 Structured oversight ensuring every capital scheme methodically progresses from initial
-                plant requisition (Under Consideration) → Feasibility formulation (Under Formulation)
-                → Board In-Principle Sanction (Stage 1) → Board Final Financial Sanction &amp; Package
-                Award (Stage 2) → Commissioning &amp; Handover.
+                feasibility formulation (Under Formulation) → plant requisition review (Under
+                Consideration) → Board In-Principle Sanction (Stage 1) → Board Final Financial
+                Sanction &amp; Package Award (Stage 2) → Commissioning &amp; Handover.
               </p>
             </div>
           </div>

@@ -294,61 +294,32 @@ export function ProjectPortfolioSection({
 
         {/* 4 PRIMARY STAGE TABS WITH LIVE DYNAMIC COUNTS & TOTAL COSTS */}
         <div className="mt-6 flex flex-wrap gap-2 pb-2">
-          {/* STAGE 2 */}
+          {/* UNDER FORMULATION */}
           <button
-            onClick={() => handleStageTabClick("STAGE 2")}
+            onClick={() => handleStageTabClick("UNDER FORMULATION")}
             className={`px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
-              activeStageTab === "STAGE 2"
-                ? "bg-emerald-700 text-white border-emerald-800 shadow-sm ring-2 ring-emerald-500/20"
-                : "bg-white text-slate-700 hover:bg-emerald-50/70 border-slate-200 hover:border-emerald-300"
+              activeStageTab === "UNDER FORMULATION"
+                ? "bg-purple-700 text-white border-purple-800 shadow-sm ring-2 ring-purple-500/20"
+                : "bg-white text-slate-700 hover:bg-purple-50/70 border-slate-200 hover:border-purple-300"
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>STAGE 2</span>
+            <span className="w-2 h-2 rounded-full bg-purple-400" />
+            <span>UNDER FORMULATION</span>
             <span
               className={`px-2 py-0.5 rounded-full font-mono text-[11px] font-bold ${
-                activeStageTab === "STAGE 2"
-                  ? "bg-emerald-900/60 text-emerald-100"
-                  : "bg-emerald-100 text-emerald-800"
+                activeStageTab === "UNDER FORMULATION"
+                  ? "bg-purple-900/60 text-purple-100"
+                  : "bg-purple-100 text-purple-900"
               }`}
             >
-              {stats.stage2Count}
+              {stats.underFormulationCount}
             </span>
             <span
               className={`text-[10px] font-mono font-medium hidden sm:inline ${
-                activeStageTab === "STAGE 2" ? "text-emerald-200" : "text-emerald-700"
+                activeStageTab === "UNDER FORMULATION" ? "text-purple-200" : "text-purple-700"
               }`}
             >
-              ({formatCostBadge(stats.stage2CostCr)})
-            </span>
-          </button>
-
-          {/* STAGE 1 */}
-          <button
-            onClick={() => handleStageTabClick("STAGE 1")}
-            className={`px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
-              activeStageTab === "STAGE 1"
-                ? "bg-blue-700 text-white border-blue-800 shadow-sm ring-2 ring-blue-500/20"
-                : "bg-white text-slate-700 hover:bg-blue-50/70 border-slate-200 hover:border-blue-300"
-            }`}
-          >
-            <span className="w-2 h-2 rounded-full bg-blue-400" />
-            <span>STAGE 1</span>
-            <span
-              className={`px-2 py-0.5 rounded-full font-mono text-[11px] font-bold ${
-                activeStageTab === "STAGE 1"
-                  ? "bg-blue-900/60 text-blue-100"
-                  : "bg-blue-100 text-blue-800"
-              }`}
-            >
-              {stats.stage1Count}
-            </span>
-            <span
-              className={`text-[10px] font-mono font-medium hidden sm:inline ${
-                activeStageTab === "STAGE 1" ? "text-blue-200" : "text-blue-700"
-              }`}
-            >
-              ({formatCostBadge(stats.stage1CostCr)})
+              ({formatCostBadge(stats.underFormulationCostCr)})
             </span>
           </button>
 
@@ -381,32 +352,61 @@ export function ProjectPortfolioSection({
             </span>
           </button>
 
-          {/* UNDER FORMULATION */}
+          {/* STAGE 1 */}
           <button
-            onClick={() => handleStageTabClick("UNDER FORMULATION")}
+            onClick={() => handleStageTabClick("STAGE 1")}
             className={`px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
-              activeStageTab === "UNDER FORMULATION"
-                ? "bg-purple-700 text-white border-purple-800 shadow-sm ring-2 ring-purple-500/20"
-                : "bg-white text-slate-700 hover:bg-purple-50/70 border-slate-200 hover:border-purple-300"
+              activeStageTab === "STAGE 1"
+                ? "bg-blue-700 text-white border-blue-800 shadow-sm ring-2 ring-blue-500/20"
+                : "bg-white text-slate-700 hover:bg-blue-50/70 border-slate-200 hover:border-blue-300"
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-purple-400" />
-            <span>UNDER FORMULATION</span>
+            <span className="w-2 h-2 rounded-full bg-blue-400" />
+            <span>STAGE 1</span>
             <span
               className={`px-2 py-0.5 rounded-full font-mono text-[11px] font-bold ${
-                activeStageTab === "UNDER FORMULATION"
-                  ? "bg-purple-900/60 text-purple-100"
-                  : "bg-purple-100 text-purple-900"
+                activeStageTab === "STAGE 1"
+                  ? "bg-blue-900/60 text-blue-100"
+                  : "bg-blue-100 text-blue-800"
               }`}
             >
-              {stats.underFormulationCount}
+              {stats.stage1Count}
             </span>
             <span
               className={`text-[10px] font-mono font-medium hidden sm:inline ${
-                activeStageTab === "UNDER FORMULATION" ? "text-purple-200" : "text-purple-700"
+                activeStageTab === "STAGE 1" ? "text-blue-200" : "text-blue-700"
               }`}
             >
-              ({formatCostBadge(stats.underFormulationCostCr)})
+              ({formatCostBadge(stats.stage1CostCr)})
+            </span>
+          </button>
+
+          {/* STAGE 2 */}
+          <button
+            onClick={() => handleStageTabClick("STAGE 2")}
+            className={`px-4 py-2.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
+              activeStageTab === "STAGE 2"
+                ? "bg-emerald-700 text-white border-emerald-800 shadow-sm ring-2 ring-emerald-500/20"
+                : "bg-white text-slate-700 hover:bg-emerald-50/70 border-slate-200 hover:border-emerald-300"
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span>STAGE 2</span>
+            <span
+              className={`px-2 py-0.5 rounded-full font-mono text-[11px] font-bold ${
+                activeStageTab === "STAGE 2"
+                  ? "bg-emerald-900/60 text-emerald-100"
+                  : "bg-emerald-100 text-emerald-800"
+              }`}
+            >
+              {stats.stage2Count}
+            </span>
+            <span
+              className={`text-[10px] font-mono font-medium hidden sm:inline ${
+                activeStageTab === "STAGE 2" ? "text-emerald-200" : "text-emerald-700"
+              }`}
+            >
+              ({formatCostBadge(stats.stage2CostCr)})
             </span>
           </button>
 
