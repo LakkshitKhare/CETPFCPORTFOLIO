@@ -25,7 +25,7 @@ export function AboutSection() {
             About the Department
           </h2>
           <p className="mt-2 text-base text-slate-600 leading-relaxed">
-            The <strong>Project Formulation &amp; Coordination (PF&amp;C) Department</strong> is an
+            The <strong>Project Formulation &amp; Coordination (PFC) Department</strong> is an
             integral division of the <em>Centre for Engineering &amp; Technology (CET)</em>, the
             in-house design, engineering, and technology consultancy unit of Steel Authority of India
             Limited (SAIL).
