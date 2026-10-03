@@ -121,7 +121,7 @@ export function OrgStructureSection() {
           </h2>
           <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
             Hierarchical governance framework of the Project Formulation &amp; Coordination
-            Department, linking executive management, specialized engineering disciplines, and plant sub-centres.
+            Department, linking executive management and plant sub-centres.
           </p>
 
         </div>
@@ -232,7 +232,7 @@ export function OrgStructureSection() {
                       <User className="w-6 h-6 text-blue-800" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900">Ms. Nikki Gupta</h4>
+                      <h4 className="text-sm font-bold text-slate-900">Ms. Nicky Gupta</h4>
                       <span className="text-xs text-blue-800 font-semibold block">
                         Senior Manager - Desk Officer
                       </span>

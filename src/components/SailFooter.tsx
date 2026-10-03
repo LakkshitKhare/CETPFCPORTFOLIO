@@ -134,32 +134,6 @@ export function SailFooter({ lastUpdated, totalProjects = 0 }: SailFooterProps) 
           </div>
         </div>
 
-        {/* Live Sync Source Banner */}
-        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>
-              Dynamic Source of Truth:{" "}
-              <a
-                href="https://docs.google.com/spreadsheets/d/1lFAJpkXHc1knvtkXStG12SRLJfEUW-ax2hPNaRnZLgo/edit?gid=1788317319#gid=1788317319"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sky-400 hover:underline font-mono inline-flex items-center gap-1"
-              >
-                <span>Google Sheet 1lFAJpkX... (gid: 1788317319)</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </span>
-          </div>
-
-          {lastUpdated && (
-            <div className="flex items-center gap-1.5 font-mono text-[11px] text-slate-400">
-              <Clock className="w-3.5 h-3.5 text-slate-500" />
-              <span>Last Synced: {new Date(lastUpdated).toLocaleString("en-IN")}</span>
-            </div>
-          )}
-        </div>
-
         {/* Legal Disclaimer & Copyright */}
         <div className="mt-6 pt-4 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
           <div>

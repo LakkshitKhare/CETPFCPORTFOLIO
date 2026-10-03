@@ -44,7 +44,7 @@ export function HeroSection({
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/80 border border-blue-700/50 text-blue-300 text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase shadow-[0_0_20px_rgba(59,130,246,0.15)]">
               <ShieldCheck className="w-4 h-4 text-sky-400" />
-              <span>Centre of Enineering and Technology</span>
+              <span>Centre for Enineering and Technology</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-[-0.05em] text-white leading-[0.95] max-w-5xl">

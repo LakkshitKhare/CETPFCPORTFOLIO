@@ -51,7 +51,6 @@ export function ProjectPortfolioSection({
   const [activeStageTab, setActiveStageTab] = useState<StageTabFilter>(selectedStageFilter);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPlant, setSelectedPlant] = useState<string>("ALL");
-  const [selectedSection, setSelectedSection] = useState<string>("ALL");
   const [sortField, setSortField] = useState<"assignment" | "cost" | "plant">("assignment");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
@@ -90,14 +89,6 @@ export function ProjectPortfolioSection({
     return Array.from(set).sort();
   }, [liveProjects]);
 
-  const distinctSections = useMemo(() => {
-    const set = new Set<string>();
-    liveProjects.forEach((p) => {
-      if (p.leadSection && p.leadSection !== "—") set.add(p.leadSection);
-    });
-    return Array.from(set).sort();
-  }, [liveProjects]);
-
   // Filtering & Sorting
   const filteredProjects = useMemo(() => {
     return projects
@@ -116,10 +107,7 @@ export function ProjectPortfolioSection({
         // 2. Plant Filter
         if (selectedPlant !== "ALL" && project.plant !== selectedPlant) return false;
 
-        // 3. Lead Section Filter
-        if (selectedSection !== "ALL" && project.leadSection !== selectedSection) return false;
-
-        // 4. Search Query (Assignment Number, Title, Plant, TFL, Deliverable, etc.)
+        // 3. Search Query (Assignment Number, Title, Plant, TFL, Deliverable, etc.)
         if (searchQuery.trim()) {
           const query = searchQuery.toLowerCase().trim();
           const matchesAssignment = project.assignmentNumber.toLowerCase().includes(query);
@@ -167,7 +155,6 @@ export function ProjectPortfolioSection({
     projects,
     activeStageTab,
     selectedPlant,
-    selectedSection,
     searchQuery,
     sortField,
     sortDirection,
@@ -185,7 +172,6 @@ export function ProjectPortfolioSection({
     setActiveStageTab("ALL");
     setSearchQuery("");
     setSelectedPlant("ALL");
-    setSelectedSection("ALL");
     setSortField("assignment");
     setSortDirection("asc");
     setCurrentPage(1);
@@ -429,7 +415,7 @@ export function ProjectPortfolioSection({
         <div className="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
             {/* Search Input */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-7 relative">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
@@ -439,7 +425,7 @@ export function ProjectPortfolioSection({
                   setCurrentPage(1);
                 }}
                 placeholder="Search Assignment #, Description, TFL, Section..."
-                className="w-full pl-9 pr-8 py-2 text-xs bg-white border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full pl-9 pr-8 py-2.5 text-xs bg-white border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent shadow-sm"
               />
               {searchQuery && (
                 <button
@@ -459,7 +445,7 @@ export function ProjectPortfolioSection({
                   setSelectedPlant(e.target.value);
                   setCurrentPage(1);
                 }}
-                className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-3 py-2.5 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
               >
                 <option value="ALL">All Plants &amp; Mines ({liveProjects.length})</option>
                 {distinctPlants.map((plant) => (
@@ -470,27 +456,8 @@ export function ProjectPortfolioSection({
               </select>
             </div>
 
-            {/* Lead Section Dropdown */}
-            <div className="lg:col-span-2">
-              <select
-                value={selectedSection}
-                onChange={(e) => {
-                  setSelectedSection(e.target.value);
-                  setCurrentPage(1);
-                }}
-                className="w-full px-3 py-2 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
-              >
-                <option value="ALL">All Lead Sections</option>
-                {distinctSections.map((sec) => (
-                  <option key={sec} value={sec}>
-                    {sec}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             {/* Sort Dropdown */}
-            <div className="lg:col-span-2 flex items-center gap-1.5">
+            <div className="lg:col-span-2">
               <select
                 value={`${sortField}-${sortDirection}`}
                 onChange={(e) => {
@@ -498,7 +465,7 @@ export function ProjectPortfolioSection({
                   setSortField(field);
                   setSortDirection(dir);
                 }}
-                className="w-full px-2.5 py-2 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full px-2.5 py-2.5 text-xs bg-white border border-slate-300 rounded-lg text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600 shadow-sm"
               >
                 <option value="assignment-asc">Assign # (Asc)</option>
                 <option value="assignment-desc">Assign # (Desc)</option>
@@ -515,14 +482,14 @@ export function ProjectPortfolioSection({
                 Showing <strong className="text-slate-900 font-mono">{filteredProjects.length}</strong> of{" "}
                 <strong className="text-slate-900 font-mono">{stats.totalProjects}</strong> total projects
               </span>
-              {(searchQuery || selectedPlant !== "ALL" || selectedSection !== "ALL" || activeStageTab !== "ALL") && (
+              {(searchQuery || selectedPlant !== "ALL" || activeStageTab !== "ALL") && (
                 <span className="text-[11px] text-blue-800 font-medium bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                   Filters Active
                 </span>
               )}
             </div>
 
-            {(searchQuery || selectedPlant !== "ALL" || selectedSection !== "ALL" || activeStageTab !== "ALL") && (
+            {(searchQuery || selectedPlant !== "ALL" || activeStageTab !== "ALL") && (
               <button
                 onClick={handleResetFilters}
                 className="inline-flex items-center gap-1 text-slate-600 hover:text-blue-900 font-semibold cursor-pointer transition-colors"
