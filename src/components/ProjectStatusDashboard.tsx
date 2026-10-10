@@ -181,7 +181,7 @@ export function ProjectStatusDashboard({
             <div className="absolute top-0 right-0 left-0 h-1.5 bg-purple-600" />
             <div className="flex items-center justify-between">
               <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-100 text-purple-900 uppercase tracking-wide">
-                Tier 2 DPR / FR
+                Tier 1 Scoping
               </span>
               <span className="text-[11px] font-mono font-semibold text-slate-500">
                 {pct(underFormulation)}% of active
@@ -220,7 +220,7 @@ export function ProjectStatusDashboard({
             <div className="absolute top-0 right-0 left-0 h-1.5 bg-amber-500" />
             <div className="flex items-center justify-between">
               <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-900 uppercase tracking-wide">
-                Tier 1 Scoping
+                Tier 2 DPR / FR
               </span>
               <span className="text-[11px] font-mono font-semibold text-slate-500">
                 {pct(underConsideration)}% of active
