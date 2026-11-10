@@ -88,6 +88,14 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
             <h3 id="modal-project-title" className="text-lg sm:text-xl font-black text-white pt-1 leading-snug">
               {project.projectDescription}
             </h3>
+            <div className="mt-2 border-l-2 border-cyan-400 pl-2.5">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-200">
+                Current Status
+              </span>
+              <p className="text-sm font-semibold text-white break-words">
+                {project.currentStatus || "No status update provided"}
+              </p>
+            </div>
           </div>
 
           <button
@@ -304,20 +312,12 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               </div>
             </div>
 
-            {(project.commissionedOn || project.currentStatus) && (
+            {project.commissionedOn && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-                {project.commissionedOn && (
-                  <div className="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
-                    <span className="text-[10px] text-emerald-800 uppercase font-medium block">Commissioned On</span>
-                    <span className="text-xs font-bold text-emerald-950 font-mono">{project.commissionedOn}</span>
-                  </div>
-                )}
-                {project.currentStatus && (
-                  <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                    <span className="text-[10px] text-slate-500 uppercase font-medium block">Current Status Note</span>
-                    <span className="text-xs font-semibold text-slate-800">{project.currentStatus}</span>
-                  </div>
-                )}
+                <div className="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                  <span className="text-[10px] text-emerald-800 uppercase font-medium block">Commissioned On</span>
+                  <span className="text-xs font-bold text-emerald-950 font-mono">{project.commissionedOn}</span>
+                </div>
               </div>
             )}
           </div>
